@@ -23,7 +23,7 @@ public class IndexDaoImpl implements IndexDao {
 	 */
 	private static final String Ca = Thread.currentThread().getStackTrace()[1].getClassName();
 	/**
-	 * 首页Dao类构造方法
+	 * 构造方法
 	 * 获取数据库连接对象
 	 * @param conn
 	 */
@@ -143,7 +143,7 @@ public class IndexDaoImpl implements IndexDao {
 		ResultSet rs = null;
 		try {
 			//设置查询语句
-			prestmt = conn.prepareStatement("select * from SCENIC LIMIT 5");
+			prestmt = conn.prepareStatement("select * from SCENIC LIMIT 7");
 			//执行查询语句再利用结果集接收查询结果
 			rs = prestmt.executeQuery();
 			//判断结果集是否为空,不为空则读取一个结果，将信息转移到Scenic并添加到Scenic集合

@@ -40,9 +40,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
        				</c:if>
        			</c:forEach>
 				</c:if>
-        
               </ul>
-
            		<div class="line">
                    <div class="fy_left">
                        共${rowCount }条&nbsp;|&nbsp;每页${pageSize }条&nbsp;|&nbsp;共${pageCount }页
@@ -55,9 +53,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                        <div class="fy"><a href="<%=basePath%>/noticetype/search2.do?ntid=${ntid}&gjc=${gjc }&pageNow=1">首页</a></div>
                    </div>
                </div>
-
 </div>
-
-
 </body>
 </html>

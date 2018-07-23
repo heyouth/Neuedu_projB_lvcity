@@ -1,8 +1,6 @@
 package com.neuedu.lvcity.servlet;
 
 import java.io.IOException;
-import java.sql.Connection;
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -12,8 +10,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.neuedu.lvcity.common.DBUtils;
-import com.neuedu.lvcity.dao.impl.*;
 import com.neuedu.lvcity.model.Article;
 import com.neuedu.lvcity.model.Banar;
 import com.neuedu.lvcity.model.Food;
@@ -27,7 +23,6 @@ import com.neuedu.lvcity.service.impl.IndexServiceImpl;
 @WebServlet("/IndexGetServlet")
 public class IndexGetServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
 	/**
 	 * 测试用户常量，返回当前类名以定位Bug发生位置
 	 */
@@ -39,7 +34,6 @@ public class IndexGetServlet extends HttpServlet {
         super();
         // TODO Auto-generated constructor stub
     }
-
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
@@ -48,9 +42,9 @@ public class IndexGetServlet extends HttpServlet {
 		
 		//获取请求会话
 		HttpSession se = request.getSession();
-		//获取主页Service，用以请求获取数据
-		IndexService serv = new IndexServiceImpl();
 		//获取请求数据
+		//获取主页Service实例,用以业务处理
+		IndexService serv = IndexServiceImpl.getInstance();
 		List<Banar> lBanar = serv.findBanar();
 		List<Scenic> lScenic = serv.findScenic();
 		List<Article> lArticle = serv.findArticle();

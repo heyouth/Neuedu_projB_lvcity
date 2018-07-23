@@ -1,3 +1,5 @@
+<%@page import="com.neuedu.lvcity.model.Article"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
@@ -17,6 +19,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 </head>
 <body>
 	<body>
+  <%  HttpSession se = request.getSession();
+      List HistoricleList = (List)se.getAttribute("historiclelist"); 
+      int rowCount=1;
+      int pageSize=9;
+      int pageCount=1;
+      int pageNow=1;
+      %>
 <div class="rightbar">
           	<div class="bread"><a href="index.html">首页</a> >${noticetype }</div>
 

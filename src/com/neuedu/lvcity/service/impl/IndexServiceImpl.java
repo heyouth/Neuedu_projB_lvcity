@@ -13,9 +13,21 @@ import com.neuedu.lvcity.model.Scenic;
 
 public class IndexServiceImpl implements IndexService {
 	/**
-	 * 测试用户常量，返回当前类名以定位Bug发生位置
+	 * 测试常量，返回当前类名以定位Bug发生位置
 	 */
 	private static final String Ca = Thread.currentThread().getStackTrace()[1].getClassName();
+	/**
+	 * 主页Service类唯一实例(饿汉式)
+	 */
+	private static IndexServiceImpl indexservice = new IndexServiceImpl();
+	
+	/**
+	 * 获取唯一的Service实例
+	 * @return Service实例
+	 */
+	public static IndexService getInstance() {
+		return indexservice;
+	}
 	
 	public List<Banar> findBanar(){
 		List<Banar> lBanar = null;

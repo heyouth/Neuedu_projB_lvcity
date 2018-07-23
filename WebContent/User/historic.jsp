@@ -1,3 +1,5 @@
+<%@page import="com.neuedu.lvcity.model.Article"%>
+<%@page import="com.neuedu.lvcity.model.Contact"%>
 <%@page import="com.sun.webkit.ContextMenu.ShowContext"%>
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%
@@ -31,6 +33,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 <body>
 <!--header-->
+  <%  HttpSession se = request.getSession();
+      List articleList = (List)se.getAttribute("articleList"); 
+      Contact contact = (Contact)se.getAttribute("contact"); 
+      Article article = (Article)articleList.get(1);
+      %>
 
 <div class="header"> 
 
@@ -131,6 +138,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 </div>
 
             </div>
+            <!-- 历史文章内容 -->
 			<iframe id="historic" name="historic" src="<%=basePath%>historic/showlist.do?pageNow=1"  style="float:right;width:712px;height:665px;border:1px solid #cccccc;background-color:white;"></iframe>
         
         </div>

@@ -15,19 +15,79 @@
     <url-pattern>*.png</url-pattern>
     <url-pattern>*.html</url-pattern>
   </servlet-mapping>
-  
-  <!-- 配置首页为一个servlet,注意这里不加斜杠 -->
+  <filter>
+    <filter-name>SetCharacterEncodingFilter</filter-name>
+    <filter-class>com.neuedu.lvcity.filter.SetCharacterEncodingFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>SetCharacterEncodingFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
   <welcome-file-list>
     <welcome-file>index</welcome-file>
   </welcome-file-list>
-  
-  <!-- Hellow 2018/7/21 -->
-   <servlet>
-   <servlet-name>IndexGet</servlet-name>
-   <servlet-class>com.neuedu.lvcity.servlet.IndexGetServlet</servlet-class>
-   </servlet>
-   <servlet-mapping>
-   <servlet-name>IndexGet</servlet-name>
-   <url-pattern>/index</url-pattern>
-   </servlet-mapping>
+  <servlet>
+    <servlet-name>IndexGet</servlet-name>
+    <servlet-class>com.neuedu.lvcity.servlet.IndexGetServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>IndexGet</servlet-name>
+    <url-pattern>/index</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>HistoryGet</servlet-name>
+    <servlet-class>com.neuedu.lvcity.servlet.HistoricServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>HistoryGet</servlet-name>
+    <url-pattern>/historic/show.do</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>HistoryGetList</servlet-name>
+    <servlet-class>com.neuedu.lvcity.servlet.HistoricShowListServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>HistoryGetList</servlet-name>
+    <url-pattern>/historic/showlist.do</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>NoticeGet</servlet-name>
+    <servlet-class>com.neuedu.lvcity.servlet.NoticeServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>NoticeGet</servlet-name>
+    <url-pattern>/noticetype/show.do</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>NoticePage</servlet-name>
+    <servlet-class>com.neuedu.lvcity.servlet.NoticeShowListServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>NoticePage</servlet-name>
+    <url-pattern>/noticetype/showlist.do</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>NoticeNextPage</servlet-name>
+    <servlet-class>com.neuedu.lvcity.servlet.NoticeNextPageServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>NoticeNextPage</servlet-name>
+    <url-pattern>/noticetype/search2.do</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>NoticeWatch</servlet-name>
+    <servlet-class>com.neuedu.lvcity.servlet.NoticeWatchServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>NoticeWatch</servlet-name>
+    <url-pattern>/noticetype/watch.do</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>NoticeSearch</servlet-name>
+    <servlet-class>com.neuedu.lvcity.servlet.NoticeSearchServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>NoticeSearch</servlet-name>
+    <url-pattern>/noticetype/search.do</url-pattern>
+  </servlet-mapping>
 </web-app>

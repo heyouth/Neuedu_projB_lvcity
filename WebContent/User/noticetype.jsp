@@ -1,3 +1,5 @@
+<%@page import="com.neuedu.lvcity.model.NoticeType"%>
+<%@page import="com.neuedu.lvcity.model.Contact"%>
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
 <%
 String path = request.getContextPath();
@@ -34,6 +36,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 
 <!--header-->
+  <%  HttpSession se = request.getSession();
+      List noticetypelist = (List)se.getAttribute("noticetypelist"); 
+      Contact contact = (Contact)se.getAttribute("contact"); 
+      %>
 
 <div class="header"> 
 
@@ -94,8 +100,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         	<img src="images/banner_erji5.jpg" width="1000" height="187" alt="" title="">        </div>
 
 		<!--banner end--> 
-
-		
 
 		<!--content-->
 
